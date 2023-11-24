@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}"/>
+    <title>Django my title</title>
+</head>
+<body>
+    <h1>{{ header }}</h1>
+    <p>Time now: {% now "N j Y   P" %}</p>
+    <p>Name: {{ user.name }} {{ user.familyname }}, Age: {{ user.age }}</p>
+    <p>City: {{ address.0 }}, Street: {{address.1}}, House: {{address.2}}, Apt: {{address.3}}</p>
+    <p>Skill set: {{lang.0}}, {{lang.1}}, {{lang.2}}, {{lang.3}}</p>
+    <img src="{% static 'images/buhta.jpg' %}" alt="Beach">
+</body>
+</html>
