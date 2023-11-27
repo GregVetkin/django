@@ -16,13 +16,13 @@ def login(request):
         password = request.POST.get("password")
 
         if correct_login(login, password):
-            return HttpResponse(f"Добро пожаловать, {login}!")
+            return render(request, 'base.html')
         else:
             data['message'] = 'Неверный логин или пароль!'
-            return render(request, 'login.html', context=data)
+            return render(request, 'test.html', context=data)
 
     else:
-        return render(request, "login.html", context=data)
+        return render(request, "test.html", context=data)
 
 
 def correct_login(login, password):

@@ -17,7 +17,7 @@ def registration(request):
         password_2 = request.POST.get("password_2")
         if password_1 != password_2:
             data['message'] = "Пароли не совпадают!"
-            return render(request, "registration.html", data)
+            return render(request, "test2.html", data)
 
         if not _login_exists(login):
             create_new_user(login, password_1)
@@ -25,10 +25,10 @@ def registration(request):
             return HttpResponseRedirect("login")
         else:
             data['message'] = "Пользователь уже существует!"
-            return render(request, "registration.html", data)
+            return render(request, "test2.html", data)
 
     else:
-        return render(request, "registration.html", {"form": RegisterForm()})
+        return render(request, "test2.html", {"form": RegisterForm()})
 
 
 
