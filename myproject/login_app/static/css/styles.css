@@ -1,3 +1,5 @@
-body{font-family: Verdana;}
+body{
+    font-family: Verdana;
+    background: url("../images/buhta.jpg");
+}
 h1{color: red;}
-img{width: 500px;}

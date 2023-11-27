@@ -19,6 +19,7 @@ from login_app.modules import registration, login
 
 
 urlpatterns = [
+    path('', login.login),
     path("reg", registration.registration),
     path("login", login.login),
 ]
