@@ -16,13 +16,13 @@ services:
   postgres_container:
     image: postgres:13.3
     environment:
-      POSTGRES_DB: "django_db"
+      POSTGRES_DB: "postgres"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
       PGDATA: "/var/lib/postgresql/data"
     volumes:
-      - .myproject/db/scheme:/docker-entrypoint-initdb.d
-      - .myproject/db/pgdata:/var/lib/postgresql/data
+      - ./myproject/db/scheme:/docker-entrypoint-initdb.d
+      - ./myproject/db/pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
