@@ -13,6 +13,18 @@ services:
       context: .
     ports:
       - 80:80
+  postgres_container:
+    image: postgres:13.3
+    environment:
+      POSTGRES_DB: "django_db"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      PGDATA: "/var/lib/postgresql/data"
+    volumes:
+      - .myproject/db/scheme:/docker-entrypoint-initdb.d
+      - .myproject/db/pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
