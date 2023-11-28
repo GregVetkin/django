@@ -15,7 +15,7 @@ def login(request):
         login = request.POST.get("login")
         password = request.POST.get("password")
 
-        if correct_login(login, password):
+        if correct_login(login.lower(), password):
             return render(request, 'base.html')
         else:
             data['message'] = 'Неверный логин или пароль!'
